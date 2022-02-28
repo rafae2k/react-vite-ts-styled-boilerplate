@@ -13,10 +13,10 @@
   "lint-staged": {
     "./src/**/*.{css,md,json,tsx}": [
       "prettier --write",
-      "stylelint"
+      "stylelint --fix"
     ],
     "*.ts?(x)": [
-      "eslint",
+      "eslint --fix",
       "prettier --write"
     ],
     "package.json": "npx sort-package-json",
@@ -55,6 +55,7 @@
     "husky": "^7.0.4",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1",
+    "stylelint": "^14.5.3",
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
