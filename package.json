@@ -6,17 +6,19 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "prepare": "husky install",
     "preview": "vite preview"
   },
-  "commitlint": {
-    "extends": [
-      "@0x219"
-    ]
+  "husky": {
+    "hooks": {
+      "commit-msg": "yarn commitlint --edit $1",
+      "prepare-commit-msg": "yarn",
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
-    "*.{css,md,json}": [
-      "prettier --write"
+    "./src/**/*.{css,md,json,tsx}": [
+      "prettier --write",
+      "stylelint"
     ],
     "*.ts?(x)": [
       "eslint",
@@ -27,11 +29,12 @@
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
-    "react-redux": "^7.2.6"
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
-    "@0x219/commitlint-config": "1.0.2",
-    "@commitlint/cli": "16.2.1",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@types/react": "17.0.39",
     "@types/react-dom": "17.0.11",
     "@typescript-eslint/eslint-plugin": "5.12.1",
@@ -47,15 +50,14 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "husky": "7.0.4",
+    "husky": "3.0.8",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1",
-    "sort-package-json": "1.54.0",
-    "stylelint-config-prettier-scss": "^0.0.1",
-    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "4.5.5",
     "vite": "2.8.4",
-    "vite-plugin-mkcert": "1.5.2",
     "vite-tsconfig-paths": "3.4.1"
   }
 }
