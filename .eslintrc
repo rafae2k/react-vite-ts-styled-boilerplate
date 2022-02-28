@@ -17,5 +17,8 @@
     "browser": true,
     "node": true
   },
-  "ignorePatterns": "*.config.ts"
+  "ignorePatterns": "*.config.ts",
+  "rules": {
+    "import/prefer-default-export": "off"
+  }
 }
