@@ -13,8 +13,7 @@
   },
   "lint-staged": {
     "./src/**/*.{css,md,json,ts,tsx}": [
-      "stylelint",
-      "git add"
+      "stylelint"
     ],
     "*.ts?(x)": [
       "eslint",
