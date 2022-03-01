@@ -11,12 +11,23 @@
 
 ## Getting Started
 
-
 ```bash
 yarn degit rafae2k/react-vite-ts-styled-boilerplate myapp
 
 cd myapp
 ```
+
+## Commits
+
+```bash
+git add your-files.ts
+
+git commit
+```
+
+- Lint staged will run ESlint, Stylelint and Jest and check for errors.
+
+- If everything is Ok it will run commitzen cli, and you could type your commit message. 😎
 
 ### Prerequisites
 
@@ -24,7 +35,6 @@ cd myapp
 - `git` should be installed (recommended v2.4.11 or higher)
 
 ### Available scripts
-
 
 #### `yarn dev`
 
